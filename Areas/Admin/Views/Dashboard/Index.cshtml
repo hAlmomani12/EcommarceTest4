@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Welcome to Admin Dashboard 👋</h2>
+    <hr />
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3 text-center">
+                <h5 class="card-title">Manage Users</h5>
+                <p class="text-muted">View and manage all registered users</p>
+
+                <a asp-area="Admin" asp-controller="Users" asp-action="Index" class="btn btn-primary mt-2">
+                    Open
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3 text-center">
+                <h5 class="card-title">Manage Courses</h5>
+                <p class="text-muted">View, create and edit courses</p>
+                <a asp-area="Admin" asp-controller="Courses" asp-action="Index" class="btn btn-success mt-2">Open</a>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3">
+                <h5 class="card-title">System Settings</h5>
+                <a href="#" class="btn btn-secondary mt-2">Open</a>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3 text-center">
+                <h5 class="card-title">Manage Enrollments</h5>
+                <p class="text-muted">View and manage student registrations</p>
+                <a asp-area="Admin" asp-controller="Enrollments" asp-action="Index" class="btn btn-info mt-2">Open</a>
+            </div>
+        </div>
+
+    </div>
+</div>

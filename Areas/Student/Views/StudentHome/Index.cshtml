@@ -1,0 +1,56 @@
+﻿@model EduSiteHQ.Models.StudentDashboardVM
+
+@if (
+    TempData["SuccessEnrollment"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessEnrollment"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<h2>Student Dashboard</h2>
+
+<h3>Hello, @Model.Student.FullName 👋</h3>
+
+<hr />
+
+<h4>My Courses</h4>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Instructor</th>
+        <th>Enrollment Date</th>
+    </tr>
+
+    @foreach (var c in Model.MyCourses)
+    {
+        <tr>
+            <td>@(c.Course?.Title?? "N/A")</td>
+            <td>@(c.Course?.Instructor?.FullName?? "N/A")</td>
+            <td>@c.EnrollmentDate.ToShortDateString()</td>
+        </tr>
+    }
+</table>
+
+<hr />
+
+<h4>Available Courses</h4>
+
+@foreach (var c in Model.AvailableCourses)
+{
+    <p>
+        <strong>@c.Title</strong>
+        <br />
+        <a asp-area="Student"
+           asp-controller="StudentEnrollments"
+           asp-action="Enroll"
+           asp-route-courseId="@c.Id"
+           class="btn btn-sm btn-primary">
+            Enroll Now
+        </a>
+
+    </p>
+}
