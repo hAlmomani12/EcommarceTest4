@@ -8,13 +8,7 @@ namespace EduSiteHQ.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            OnDelete(DeleteBehavior.Restrict);
 
-        }
-
-        private void OnDelete(DeleteBehavior restrict)
-        {
-            throw new NotImplementedException();
         }
 
         public DbSet<Course> Courses { get; set; }
@@ -22,5 +16,5 @@ namespace EduSiteHQ.Data
         public DbSet<CourseMaterial> CourseMaterials { get; set; }
 
     }
-    //14.Jan.2026
+    //10/2/2026
 }
