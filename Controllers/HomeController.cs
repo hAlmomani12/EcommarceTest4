@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using EduSiteHQ.Models;
 using Microsoft.AspNetCore.Mvc;
-//eeeeeeeeeeeeeeeeeeee
+//eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 namespace EduSiteHQ.Controllers
 {
     public class HomeController : Controller
